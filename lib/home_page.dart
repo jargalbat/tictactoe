@@ -52,7 +52,10 @@ class _HomePageState extends State<HomePage> {
 
     switch (value) {
       case ('empty'):
-        return Image(image: edit);
+        return ClipRRect(
+          borderRadius: BorderRadius.circular(8.0),
+          child: Image(image: edit)
+        );
         break;
       case ('cross'):
         return X(50, 10);
@@ -65,46 +68,76 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        key: _scafoldKey,
-        backgroundColor: Color(0xFF1C1C1C),
+    return Scaffold(
+      key: _scafoldKey,
+      backgroundColor: Color(0xFF1C1C1C),
 //      appBar: AppBar(
 //        title: Text(
 //          'Tici Taco',
 //          style: TextStyle(color: Colors.white),
 //        ),
-//        backgroundColor: Color(0xFF1C1C1C),
+//          backgroundColor: Color(0xFF1C1C1C),
+//        brightness: Brightness.light,
 //      ),
-        body: Column(
+      body: SafeArea(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(
               height: 40.0,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'Cross',
-                  style: TextStyle(
-                      fontSize: 30.0,
-                      color: Colors.orange,
-                      fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 10.0),
-                Text(
-                  '${crossWin}',
-                  style: TextStyle(
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                )
-              ],
+            Padding(
+              padding: EdgeInsets.only(
+                  top: 0.0, right: 20.0, bottom: 0.0, left: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Cross',
+                        style: TextStyle(
+                            fontSize: 30.0,
+                            color: Colors.orange,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 10.0),
+                      Text(
+                        '${crossWin}',
+                        style: TextStyle(
+                            fontSize: 32.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      )
+                    ],
+                  ),
+
+                  Column(
+                    children: <Widget>[
+                      Text(
+                        'Circle',
+                        style: TextStyle(
+                            fontSize: 30.0,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 10.0),
+                      Text(
+                        '${circleWin}',
+                        style: TextStyle(
+                            fontSize: 32.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 10.0,
             ),
             Expanded(
               child: GridView.builder(
@@ -125,47 +158,30 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Column(
-              children: <Widget>[
-                Text(
-                  'Circle',
-                  style: TextStyle(
-                      fontSize: 30.0,
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 10.0),
-                Text(
-                  '${circleWin}',
-                  style: TextStyle(
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                )
-              ],
-            ),
             Padding(
               padding: EdgeInsets.only(
                   top: 20.0, right: 20.0, bottom: 50.0, left: 20.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      FloatingActionButton(
-                        child: Icon(Icons.refresh),
-                        onPressed: () => newGame(),
-                        backgroundColor: Colors.blueAccent,
-                      ),
-                      SizedBox(
-                        height: 10.0,
-                      ),
-                      Text(
-                        'Reset',
-                        style: TextStyle(color: Colors.white, fontSize: 18.0),
-                      ),
-                    ],
-                  ),
+//                  Column(
+//                    children: <Widget>[
+//                      FloatingActionButton(
+//                        child: Icon(Icons.refresh),
+//                        onPressed: () => newGame(),
+//                        backgroundColor: Colors.blueAccent,
+//                      ),
+//                      SizedBox(
+//                        height: 10.0,
+//                      ),
+//                      Text(
+//                        'Reset',
+//                        style: TextStyle(color: Colors.white, fontSize: 18.0),
+//                      ),
+//                    ],
+//                  ),
+
+
                   Column(
                     children: <Widget>[
                       FloatingActionButton(
