@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color(0xFF1C1C1C),
 //      appBar: AppBar(
 //        title: Text(
-//          'Tic Tac Toe',
+//          'Tici Taco',
 //          style: TextStyle(color: Colors.white),
 //        ),
 //        backgroundColor: Color(0xFF1C1C1C),
@@ -83,73 +83,25 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 40.0,
             ),
-            SizedBox(
-              height: 100.0,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Text(
-                          'Cross',
-                          style: TextStyle(
-                              fontSize: 30.0,
-                              color: Colors.orange,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          '${crossWin}',
-                          style: TextStyle(
-                              fontSize: 32.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Text(
-                          'Circle',
-                          style: TextStyle(
-                              fontSize: 30.0,
-                              color: Colors.green,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          '${circleWin}',
-                          style: TextStyle(
-                              fontSize: 32.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Text(
-                          'Draw',
-                          style: TextStyle(
-                              fontSize: 30.0,
-                              color: Colors.blueAccent,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          '${draw}',
-                          style: TextStyle(
-                              fontSize: 32.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        )
-                      ],
-                    ),
-                  ],
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'Cross',
+                  style: TextStyle(
+                      fontSize: 30.0,
+                      color: Colors.orange,
+                      fontWeight: FontWeight.bold),
                 ),
-              ),
+                SizedBox(height: 10.0),
+                Text(
+                  '${crossWin}',
+                  style: TextStyle(
+                      fontSize: 32.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                )
+              ],
             ),
             SizedBox(
               height: 20.0,
@@ -173,6 +125,25 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            Column(
+              children: <Widget>[
+                Text(
+                  'Circle',
+                  style: TextStyle(
+                      fontSize: 30.0,
+                      color: Colors.green,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  '${circleWin}',
+                  style: TextStyle(
+                      fontSize: 32.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                )
+              ],
+            ),
             Padding(
               padding: EdgeInsets.only(
                   top: 20.0, right: 20.0, bottom: 50.0, left: 20.0),
@@ -190,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                         height: 10.0,
                       ),
                       Text(
-                        'New Game',
+                        'Reset',
                         style: TextStyle(color: Colors.white, fontSize: 18.0),
                       ),
                     ],
